@@ -13,11 +13,12 @@ Plug 'voldikss/vim-floaterm'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_poweline_fonts = 1
+let g:airline_powerline_fonts = 1
 
 let g:fzf_preview_window = 'right:50%'
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6  }  }
@@ -27,4 +28,6 @@ autocmd vimenter * ++nested colorscheme
 syntax on
 colorscheme gruvbox
 
+" Keymappings
+map <C-b> :NERDTreeToggle<CR>
 
