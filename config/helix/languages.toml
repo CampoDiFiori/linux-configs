@@ -9,10 +9,18 @@ cargo = { loadOutDirsFromCheck = true, features = "all" }
 procMacro.enable = true
 diagnostics = { disabled = [ "unresolved-proc-macro" ] }
 
+[language.config.hints]
+assignVariableTypes = true
+compositeLiteralFields = true
+constantValues = true
+functionTypeParameters = true
+parameterNames = true
+rangeVariableTypes = true
+
 [language.debugger]
 name = "lldb-vscode"
 transport = "stdio"
-command = "/home/pdudko/.vscode/extensions/lanza.lldb-vscode-0.2.3/bin/darwin/bin/lldb-vscode"
+command = "/home/pdudko/.vscode/extensions/vadimcn.vscode-lldb-1.8.1/bin/lldb-server"
 
 [[language.debugger.templates]]
 name = "binary"
