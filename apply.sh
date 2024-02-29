@@ -8,7 +8,7 @@ rm ~/.config/helix/config.toml
 mkdir -p ~/.config/helix
 
 ln -s ~/helix/runtime ~/.config/helix/runtime
-# ln -s $PWD/config/helix/languages.toml ~/.config/helix/languages.toml
+ln -s $PWD/config/helix/languages.toml ~/.config/helix/languages.toml
 ln -s $PWD/config/helix/config.toml ~/.config/helix/config.toml
 
 # Alacritty
