@@ -1,4 +1,4 @@
-theme = "everforest_dark"
+theme = "gruvbox"
 
 [editor.cursor-shape]
 insert = "underline"
@@ -9,3 +9,7 @@ character = "¦"
 
 [editor]
 rulers = [80]
+
+[editor.lsp]
+display-inlay-hints = false
+
