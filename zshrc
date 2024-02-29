@@ -76,6 +76,7 @@ plugins=(
   rust
   zsh-interactive-cd
   last-working-dir
+  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -105,5 +106,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
