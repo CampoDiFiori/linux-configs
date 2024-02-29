@@ -10,6 +10,10 @@
 - oh my zsh
 - gitui
 
+# For MacOS
+- yabai
+- skhd
+
 ## How to use
 
 - `./apply.sh`
