@@ -4,18 +4,31 @@
 rm ~/.config/helix/runtime
 rm ~/.config/helix/languages.toml
 rm ~/.config/helix/config.toml
+rm ~/.config/helix/yazi-picker.sh
 
 mkdir -p ~/.config/helix
 
 ln -s ~/helix/runtime ~/.config/helix/runtime
 ln -s $PWD/config/helix/languages.toml ~/.config/helix/languages.toml
 ln -s $PWD/config/helix/config.toml ~/.config/helix/config.toml
+ln -s $PWD/config/helix/yazi-picker.sh ~/.config/helix/yazi-picker.sh
 
 # Alacritty
-mkdir -p ~/.config/skhd
 rm ~/.config/alacritty
 
 ln -s $PWD/config/alacritty ~/.config/alacritty
+
+# Zellij
+mkdir -p ~/.config/zellij
+rm ~/.config/zellij/config.kdl
+
+cp $PWD/config/zellij/config.kdl ~/.config/zellij/config.kdl
+
+# Yazi
+mkdir -p ~/.config/yazi
+rm ~/.config/yazi/yazi.toml
+
+ln -s $PWD/config/yazi/yazi.toml ~/.config/yazi/yazi.toml
 
 # TMUX
 rm ~/.tmux.conf
