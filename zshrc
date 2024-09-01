@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/go/bin:$HOME/scripts:/opt/homebrew/opt/llvm/bin:$PATH
+export PATH=$HOME/go/bin:$HOME/scripts:/opt/homebrew/opt/llvm/bin:$HOME/.local/bin:$PATH
+
+export PATH=$HOME/zls/zig-out/bin:$HOME/zig-macos-aarch64-0.14.0-dev.367+a57479afc:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -91,7 +93,7 @@ plugins=(
 
 export EDITOR=/opt/homebrew/bin/hx
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -118,6 +120,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ls="eza -lo --grid"
 
 export PKG_CONFIG_PATH="$(brew --prefix postgresql@15)/lib/pkgconfig:${PKG_CONFIG_PATH}"
 
@@ -125,3 +128,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+source <(fzf --zsh)
+
+eval "$(zoxide init zsh)"
+
+eval "$(starship init zsh)"
+
+setopt incappendhistory
