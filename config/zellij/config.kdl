@@ -38,7 +38,7 @@ keybinds clear-defaults=true {
         bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
     }
     move {
-        bind "Alt h" { SwitchToMode "Normal"; }
+        bind "Alt m" { SwitchToMode "Normal"; }
         bind "n" "Tab" { MovePane; }
         bind "p" { MovePaneBackwards; }
         bind "h" "Left" { MovePane "Left"; }
@@ -83,7 +83,7 @@ keybinds clear-defaults=true {
         // uncomment this and adjust key if using copy_on_select=false
     }
     search {
-        bind "Alt s" { SwitchToMode "Normal"; }
+        bind "Alt /" { SwitchToMode "Normal"; }
         bind "Alt c" { ScrollToBottom; SwitchToMode "Normal"; }
         bind "y" { Copy; }
         bind "j" "Down" { ScrollDown; }
@@ -112,7 +112,7 @@ keybinds clear-defaults=true {
     }
     session {
         bind "Alt o" { SwitchToMode "Normal"; }
-        bind "Alt s" { SwitchToMode "Scroll"; }
+        bind "Alt /" { SwitchToMode "Scroll"; }
         bind "d" { Detach; }
         bind "w" {
             LaunchOrFocusPlugin "zellij:session-manager" {
@@ -123,7 +123,7 @@ keybinds clear-defaults=true {
         }
     }
     tmux {
-        bind "[" { SwitchToMode "Scroll"; }
+        bind "[" { SwitchToMode "Scroll"; EditScrollback; SwitchToMode "Normal"; }
         bind "w" { 
             SwitchToMode "Session"; 
             LaunchOrFocusPlugin "zellij:session-manager" {
@@ -149,7 +149,7 @@ keybinds clear-defaults=true {
         bind "j" { MoveFocus "Down"; SwitchToMode "Normal"; }
         bind "k" { MoveFocus "Up"; SwitchToMode "Normal"; }
         bind "1" { MoveFocus "Up"; SwitchToMode "Normal"; }
-        bind "o" { FocusNextPane; }
+        bind "o" { NewPane; SwitchToMode "Normal"; }
         bind "d" { Detach; }
         bind "Space" { NextSwapLayout; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
@@ -203,7 +203,7 @@ keybinds clear-defaults=true {
         bind "Alt t" { SwitchToMode "Tab"; }
     }
     shared_except "move" "locked" {
-        bind "Alt h" { SwitchToMode "Move"; }
+        bind "Alt m" { SwitchToMode "Move"; }
     }
     shared_except "tmux" "locked" {
         bind "Ctrl b" { SwitchToMode "Tmux"; }
@@ -335,7 +335,7 @@ plugins {
 //
 // copy_command "xclip -selection clipboard" // x11
 // copy_command "wl-copy"                    // wayland
-// copy_command "pbcopy"                     // osx
+copy_command "pbcopy"                     // osx
 
 // Choose the destination for copied text
 // Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
