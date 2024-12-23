@@ -1,14 +1,24 @@
 #!/bin/bash
 
+# Nix
+
+rm ~/.config/nix-darwin/flake.nix
+
+mkdir -p ~/.config/nix-darwin
+
+ln -s $PWD/config/nix-darwin/flake.nix ~/.config/nix-darwin/flake.nix
+
+darwin-rebuild switch --impure --flake ~/.config/nix-darwin#pdudko
+
 # Helix
-rm ~/.config/helix/runtime
+# rm ~/.config/helix/runtime
 rm ~/.config/helix/languages.toml
 rm ~/.config/helix/config.toml
 rm ~/.config/helix/yazi-picker.sh
 
 mkdir -p ~/.config/helix
 
-ln -s ~/helix/runtime ~/.config/helix/runtime
+# ln -s ~/helix/runtime ~/.config/helix/runtime
 ln -s $PWD/config/helix/languages.toml ~/.config/helix/languages.toml
 ln -s $PWD/config/helix/config.toml ~/.config/helix/config.toml
 ln -s $PWD/config/helix/yazi-picker.sh ~/.config/helix/yazi-picker.sh
