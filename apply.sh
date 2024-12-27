@@ -28,6 +28,12 @@ rm ~/.config/alacritty
 
 ln -s $PWD/config/alacritty ~/.config/alacritty
 
+# Ghostty
+mkdir -p ~/.config/ghostty
+rm ~/.config/ghostty/config
+
+ln -s $PWD/config/ghostty/config ~/.config/ghostty/config
+
 # Zellij
 mkdir -p ~/.config/zellij
 rm ~/.config/zellij/config.kdl
