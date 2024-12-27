@@ -4,8 +4,12 @@ export PATH=$HOME/go/bin:$HOME/scripts:/opt/homebrew/opt/llvm/bin:$HOME/.local/b
 
 export PATH=$HOME/zls/zig-out/bin:$HOME/zig-macos-aarch64-0.14.0-dev.367+a57479afc:$PATH
 
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Compiling Fudo
+export BINDGEN_EXTRA_CLANG_ARGS="-I/opt/homebrew/include"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -120,6 +124,9 @@ export EDITOR=/opt/homebrew/bin/hx
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
+
 alias ls="eza -lo --grid"
 
 export PKG_CONFIG_PATH="$(brew --prefix postgresql@15)/lib/pkgconfig:${PKG_CONFIG_PATH}"
