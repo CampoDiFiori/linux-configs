@@ -95,7 +95,9 @@ plugins=(
   zsh-autosuggestions
 )
 
-export EDITOR=/opt/homebrew/bin/hx
+# export EDITOR=/opt/homebrew/bin/hx
+# export EDITOR=/run/current-system/sw/bin/hx
+export EDITOR=`which hx`
 
 # source $ZSH/oh-my-zsh.sh
 

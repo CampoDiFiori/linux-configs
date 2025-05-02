@@ -8,6 +8,9 @@ mkdir -p ~/.config/nix-darwin
 
 ln -s $PWD/config/nix-darwin/flake.nix ~/.config/nix-darwin/flake.nix
 
+# To update packages installed via Nix in ~/.config/nix-darwin
+# nix flake update --impure nixpkgs
+
 darwin-rebuild switch --impure --flake ~/.config/nix-darwin#pdudko
 
 # Helix
@@ -46,11 +49,11 @@ rm ~/.config/yazi/yazi.toml
 
 ln -s $PWD/config/yazi/yazi.toml ~/.config/yazi/yazi.toml
 
-# TMUX
-rm ~/.tmux.conf
+# # TMUX
+# rm ~/.tmux.conf
 
-ln -s $PWD/tmux.conf ~/.tmux.conf
-tmux source-file ~/.tmux.conf
+# ln -s $PWD/tmux.conf ~/.tmux.conf
+# tmux source-file ~/.tmux.conf
 
 # ZSH
 rm ~/.zshrc

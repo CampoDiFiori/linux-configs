@@ -6,9 +6,23 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+
+    # Optional: Declarative tap management
+    homebrew-core = {
+      url = "github:homebrew/homebrew-core";
+      flake = false;
+    };
+    homebrew-cask = {
+      url = "github:homebrew/homebrew-cask";
+      flake = false;
+    };
+    # homebrew-bundle = {
+    #   url = "github:homebrew/homebrew-bundle";
+    #   flake = false;
+    # };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew }:
+  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask }:
   let
     configuration = { pkgs, config, ... }: {
       # List packages installed in system profile. To search by name, run:
@@ -28,6 +42,8 @@
           pkgs.eza
           pkgs.zsh
           pkgs.lazygit
+          pkgs.bat
+          pkgs.rustup
         ];
 
       fonts.packages = [
@@ -38,8 +54,9 @@
         enable = true;
         casks = [
           # "arc"
+          "ghostty"
         ];
-        onActivation.cleanup = "zap";
+        # onActivation.cleanup = "zap";
       };
 
       system.activationScripts.applications.text = let
@@ -108,11 +125,11 @@
             user = "pdudko";
 
             # Optional: Declarative tap management
-            # taps = {
-            #   "homebrew/homebrew-core" = homebrew-core;
-            #   "homebrew/homebrew-cask" = homebrew-cask;
-            #   "homebrew/homebrew-bundle" = homebrew-bundle;
-            # };
+            taps = {
+              "homebrew/homebrew-core" = homebrew-core;
+              "homebrew/homebrew-cask" = homebrew-cask;
+              # "homebrew/homebrew-bundle" = homebrew-bundle;
+            };
 
             # Optional: Enable fully-declarative tap management
             #
