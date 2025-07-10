@@ -91,6 +91,9 @@
       # Necessary for using flakes on this system..
       nix.settings.experimental-features = "nix-command flakes";
 
+      # Set primary user for nix-darwin migration
+      system.primaryUser = "pdudko";
+
       # Enable alternative shell support in nix-darwin.
       # programs.fish.enable = true;
       programs.zsh.enable = true;

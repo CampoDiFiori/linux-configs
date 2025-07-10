@@ -4,6 +4,10 @@ export PATH=$HOME/go/bin:$HOME/scripts:/opt/homebrew/opt/llvm/bin:$HOME/.local/b
 
 export PATH=$HOME/zls/zig-out/bin:$HOME/zig-macos-aarch64-0.14.0-dev.367+a57479afc:$PATH
 
+# Darwin-rebuild convenience aliases
+alias dr-build="darwin-rebuild build --flake ~/.config/nix-darwin#pdudko"
+alias dr-switch="darwin-rebuild switch --flake ~/.config/nix-darwin#pdudko"
+alias dr-update="cd ~/.config/nix-darwin && nix flake update && darwin-rebuild switch --flake ~/.config/nix-darwin#pdudko"
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"

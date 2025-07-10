@@ -78,4 +78,3 @@ mkdir -p ~/.config/yabai
 rm ~/.config/yabai/yabairc
 ln -s $PWD/config/yabai/yabairc ~/.config/yabai/yabairc
 yabai --restart-service
-
